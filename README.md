@@ -1,2 +1,5 @@
 # Game-Launcher
-Python Game Launcher. My attempt at replicating the system similar to Battlefield's Battlelog.
+Python Game Launcher. Launch your applications or games via a web interface.
+
+# Note
+This was a side project and future support will not be guarunteed.
