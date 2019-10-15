@@ -16,14 +16,17 @@ async def index(request, test=None):
     has_args = False
     if v == False:
         _temp = os.system('cls')
+        # Work with Django to pass the user data thru.
         print("Requested Helper Service from User::SquarerFive")
         print('          [METHOD]   [APP]     [ADDI]')
         v=True
     try:
+        # Get context.
         method = request.query['method']
         game = request.query['app']
         server = request.query['server']
         has_args = True
+        # Print the context.
         print('[HELPER]', method,game,server)
         process_helper(method,game,server)
     except:
@@ -36,8 +39,10 @@ async def index(request, test=None):
 def process_helper(method,app,server):
     if method == "startgame":
         if app == "conquest":
+            # TODO: Grab the app location from the registry.
             file_name = "F:\\UE4 Stuff\\Packaged\\Conquest Builds\\Release\\WindowsNoEditor\\Conquest.exe"
    # launch_command= '{0} {1} -dx12'.format(file_name, server)
+            # Start the game.
             tr = threading.Thread(target =__internal_start, args=(app, ([file_name, '{}'.format(server)])))
             tr.start()
     # Launch subprocess on main thread.
