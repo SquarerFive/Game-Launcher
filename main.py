@@ -6,9 +6,14 @@ app = web.Application()
 sio.attach(app)
 servers = [
     ]
+# WIP
 latest_version=0.2
+# replace with remote URL, (127.0.0.1:8123)
 download_url="http://localhost/game/patch/"
+# additionally read metadata from the server to set this value.
 download_file="Conquest-WindowsNoEditor_0_P.pak"
+
+
 GameServers = [
     ]
 serverData={
